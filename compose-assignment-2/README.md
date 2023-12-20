@@ -24,7 +24,7 @@ This drupal container runs as www-data user but the build actually runs as root,
 so often we have to do things like `chown` to change file owners to the proper user:
 `chown -R www-data:www-data bootstrap`. Remember the first line needs a `\` at end
 to signify the next line is included in the command, and at start of next line you should have
-`&&` to signify "if first command succeeds then also run this command"
+`&&` to signify "if first command succeeds then also run this command" 
 - Then, just to be safe, change the working directory back to its default (from drupal image) at `/var/www/html`
 
 ## Compose File
