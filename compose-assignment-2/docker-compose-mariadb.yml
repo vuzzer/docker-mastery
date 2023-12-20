@@ -1,0 +1,22 @@
+# create your drupal and postgres config here, based off the last assignment
+services:
+  drupal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: custom-drupal
+    ports:
+      - 8080:80
+    volumes:
+      - drupal-data:/var/lib/mysql
+
+  mariadb:
+    image: mariadb:10.4
+    environment:
+      MARIADB_PASSWORD: 123456789
+      MARIADB_DATABASE: drupal
+      MARIADB_USER: drupal
+      MARIADB_ROOT_PASSWORD: 123456789
+
+volumes:
+  drupal-data:
