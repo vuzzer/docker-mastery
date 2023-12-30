@@ -1,0 +1,5 @@
+services:
+  vote:
+    image: bretfisher/examplevotingapp_vote
+    ports:
+      - 80:5000
