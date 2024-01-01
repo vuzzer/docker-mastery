@@ -11,6 +11,8 @@ services:
     image: postgres:14
     environment:
       POSTGRES_PASSWORD_FILE: /run/secrets/psql_pwd
+    secrets:
+      - psql_pwd
 
 volumes:
   drupal-data:
